@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="title" content="ReproductorMV" />
+    <meta name="description" content="Escucha tu linda música, libre de anuncios Uyyyy." />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://metatags.io/" />
+    <meta property="og:title" content="ReproductorMV" />
+    <meta property="og:description" content="Escucha tu linda música, libre de anuncios Uyyyy." />
+    <!-- <meta property="og:url" /> -->
+    <meta property="og:image" content="https://i.pinimg.com/736x/14/01/8a/14018a58618677b50fcbcc740aacd7be.jpg" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://metatags.io/" />
+    <meta property="twitter:title" content="ReproductorMV" />
+    <meta property="twitter:description" content="Escucha tu linda música, libre de anuncios Uyyyy." />
+    <meta property="twitter:image" content="https://i.pinimg.com/736x/14/01/8a/14018a58618677b50fcbcc740aacd7be.jpg" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/icono.png">
+    <title>ReproductorMV2</title></head>
+
+<body>
+
+    <div class="d-flex align-items-center justify-content-center min-vh-100 mb-3">
+        <div class="container mt-3">
+            <div id="default-view" class="wrapper">
+                <div class="top-bar d-flex justify-content-between align-items-center">
+                    <div id="search-container-principal" class="search-container-principal">
+                        <input type="text" id="search-input-principal" placeholder="Buscar...">
+                        <i class="material-icons" id="close-search">close</i>
+                    </div>
+                    <div class="dropdown">
+                            <a href="#" id="search-option"><span class="lupa search-option material-icons">search</span></a>
+                    </div>
+                </div>
+                <div id="suggestions-container-principal" class="suggestions-container"></div>
+                <div class="img-area mt-3">
+                    <img src="img/music-1.jpg" class="img-fluid" alt="imgMV">
+                </div>
+                <div class="song-details text-center mt-3">
+                    <p class="name"></p>
+                    <p class="artist"></p>
+                </div>
+                <div class="progress-area mt-3">
+                    <div class="progress-bar">
+                        <audio id="main-audio" src=""></audio>
+                    </div>
+                    <div class="song-timer d-flex justify-content-between mt-2">
+                        <span class="current-time">0:00</span>
+                        <span class="max-duration">0:00</span>
+                    </div>
+                </div>
+                
+                <div class="controls d-flex justify-content-around align-items-center mt-4 mb-2">
+                    <i id="repeat-plist" class="material-icons" title="Playlist looped">repeat</i>
+                    <i id="prev" class="material-icons">skip_previous</i>
+                    <div class="play-pause">
+                        <i class="material-icons play">play_arrow</i>
+                    </div>
+                    <i id="next" class="material-icons">skip_next</i>
+                    <i id="more-music" class="material-icons">queue_music</i>
+                </div>
+                
+                <div class="music-list mt-3">
+                    <div class="header d-flex justify-content-between align-items-center">
+                        <div class="row">
+                            <span><img class="dance" src="img/baile.gif" alt="gif"> Todas las canciones</span>
+                        </div>
+                        <div>
+                            <i id="back-to-alphabet" class="material-icons">arrow_back_ios_new</i>
+                            <i id="close" class="material-icons">close</i>
+                        </div>
+                    </div>
+                    <div class="alphabet-list">
+                        <ul id="alphabet"></ul>
+                    </div>
+                    <ul id="playlist"></ul>
+                </div>                                         
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/music-list.js"></script>
+    <script src="js/script.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+</body>
+</html>
