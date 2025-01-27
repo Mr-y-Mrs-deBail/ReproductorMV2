@@ -15,7 +15,7 @@
 :root { 
     --dark: #000000;
     --aqua: #000000;
-    --purplelight: #ab2ce6; 
+    --yellowlight: #d3e62c; 
     --light: #ffffffce; 
     --white: #ffffff; 
     --darkwhite: #cecaca; 
@@ -32,7 +32,6 @@ body {
     background-position: center; /* Centra la imagen */
     height: 100vh;
 }
-
 
 /* Reproductor de música principal */
 
@@ -229,7 +228,7 @@ body {
     width: 0%; 
     position: relative; 
     border-radius: inherit; 
-    background: linear-gradient(90deg, var(--purplelight) 0%, var(--aqua) 100%);
+    background: linear-gradient(90deg, var(--yellowlight) 0%, var(--aqua) 100%);
     overflow: visible;
 }
 
