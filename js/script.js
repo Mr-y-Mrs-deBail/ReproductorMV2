@@ -523,7 +523,7 @@ function throttle(func, limit) {
 
 // Lista de canciones ______________________________________________________
 
-const gifNames = ["1", "2"];
+const gifNames = ["1", "2", "3"];
 const alphabet = ["#", ... "BCEFGHLMNPQRSUVY".split("")];
 const backToAlphabetBtn = document.getElementById('back-to-alphabet');
 
