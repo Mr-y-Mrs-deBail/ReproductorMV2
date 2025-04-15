@@ -205,7 +205,6 @@ if ('mediaSession' in navigator) {
     });
 }
 
-// Mantener la música en reproducción cuando la página no está visible
 document.addEventListener('visibilitychange', function() {
     if (!document.hidden) {
         if (wrapper.classList.contains("paused")) {
@@ -237,10 +236,10 @@ const wrapper = document.querySelector(".wrapper"),
 let musicIndex = Math.floor(Math.random() * allMusic.length);
 let isMusicPaused = true;
 let isShuffle = false;
-let playedSongs = []; // Registro de canciones reproducidas
-let preloadedSongs = []; // Registro de canciones precargadas
-const increment = 50; // Número de canciones a cargar progresivamente
-let loadedSongs = 0; // Control del número de canciones cargadas
+let playedSongs = []; 
+let preloadedSongs = []; 
+const increment = 50; 
+let loadedSongs = 0; 
 
 // Ordena alfabéticamente los nombres de las canciones
 allMusic.sort((a, b) => a.name.localeCompare(b.name));
@@ -249,14 +248,14 @@ window.addEventListener("load", () => {
     loadMusic(musicIndex);
     updatePlayingSong();
     displayAllSongs();
-    updateMetadata();  // Actualiza la metadata al cargar
-    preloadNextSongs(); // Precargar las próximas canciones
+    updateMetadata(); 
+    preloadNextSongs(); 
 });
 
 function loadMusic(index) {
     if (mainAudio.src) {
         mainAudio.pause();
-        mainAudio.removeAttribute('src'); // Libera el recurso de audio anterior
+        mainAudio.removeAttribute('src'); 
         mainAudio.load();
     }
 
@@ -267,10 +266,10 @@ function loadMusic(index) {
     musicArtist.innerText = song.artist;
     if (musicImg.dataset.src !== `img/${song.img}.jpg`) {
         musicImg.dataset.src = `img/${song.img}.jpg`;
-        lazyLoadImage(musicImg); // Aplicar lazy loading
+        lazyLoadImage(musicImg); 
     }
     mainAudio.src = `music/${song.src}.mp3`;
-    updateMetadata(); // Actualizar metadata al cargar
+    updateMetadata(); 
 }
 
 function playMusic() {
@@ -279,7 +278,7 @@ function playMusic() {
         playPauseBtn.querySelector("i").innerText = "pause";
         mainAudio.play();
         imgArea.classList.add("playing");
-        updateMetadata();  // Asegurar que la metadata está actualizada
+        updateMetadata(); 
     }
 }
 
@@ -524,7 +523,7 @@ function throttle(func, limit) {
 // Lista de canciones ______________________________________________________
 
 const gifNames = ["1", "2", "3"];
-const alphabet = ["#", ... "BCEFGHLMNPQRSUVY".split("")];
+const alphabet = ["#", ... "BCDEFGHLMNPQRSTUVY".split("")];
 const backToAlphabetBtn = document.getElementById('back-to-alphabet');
 
 function changeGif() {
@@ -583,7 +582,7 @@ function loadSongsByLetter(letter) {
     }
 
     updatePlayingSong();
-    backToAlphabetBtn.classList.remove("hidden"); // Mostrar el icono de regreso cuando estamos en la lista de canciones
+    backToAlphabetBtn.classList.remove("hidden"); 
 }
 
 // Función para mostrar la lista del abecedario ______________________________________________________
@@ -621,7 +620,7 @@ function selectSong(element) {
         loadMusic(musicIndex);
         playMusic();
         updatePlayingSong();
-        backToAlphabetBtn.classList.remove("hidden"); // Muestra el icono de regreso cuando estamos en la lista de canciones
+        backToAlphabetBtn.classList.remove("hidden");
     }
 }
 

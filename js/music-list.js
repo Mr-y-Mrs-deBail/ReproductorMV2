@@ -256,4 +256,109 @@ let allMusic = [
         img: "music-29", 
         src: "music-37", 
     }, 
+               
+    { 
+        name: "Bad 2012 Remaster", 
+        artist: "Michael Jackson", 
+        img: "music-30", 
+        src: "music-38", 
+    }, 
+               
+    { 
+        name: "Codeine Crazy - (Spanish Remix)", 
+        artist: "Ele A El Dominio", 
+        img: "music-31", 
+        src: "music-39", 
+    }, 
+               
+    { 
+        name: "The Way You Make Me Feel - 2012 Remaster ", 
+        artist: "Michael Jackson", 
+        img: "music-30", 
+        src: "music-40", 
+    }, 
+               
+    { 
+        name: "Llegan Ya", 
+        artist: "Millonario", 
+        img: "music-32", 
+        src: "music-41", 
+    }, 
+               
+    { 
+        name: "De Aquí Los Veo", 
+        artist: "Millonario x Babo", 
+        img: "music-33", 
+        src: "music-42", 
+    }, 
+               
+    { 
+        name: "Duro", 
+        artist: "Sangre x Sangre x Millonario x Joe Parra", 
+        img: "music-34", 
+        src: "music-43", 
+    }, 
+               
+    { 
+        name: "Diego Rivera", 
+        artist: "Millonario", 
+        img: "music-32", 
+        src: "music-44", 
+    }, 
+               
+    { 
+        name: "Tío Rico", 
+        artist: "Millonario x Alemán", 
+        img: "music-35", 
+        src: "music-45", 
+    }, 
+               
+    { 
+        name: "Chingo de cheve", 
+        artist: "Millonario", 
+        img: "music-33", 
+        src: "music-46", 
+    }, 
+               
+    { 
+        name: "La pegajosa", 
+        artist: "El Alfa x Bryant Myers", 
+        img: "music-36", 
+        src: "music-47", 
+    }, 
+               
+    { 
+        name: "Curazao", 
+        artist: "El Alfa x Farruko", 
+        img: "music-37", 
+        src: "music-48", 
+    }, 
+               
+    { 
+        name: "Plebada", 
+        artist: "El Alfa x Peso Pluma", 
+        img: "music-38", 
+        src: "music-49", 
+    }, 
+               
+    { 
+        name: "Tacata (Remix)", 
+        artist: "Tiagz x Fuerza Regida x EL Alfa", 
+        img: "music-39", 
+        src: "music-50", 
+    }, 
+               
+    { 
+        name: "Dembow y Reggaeton", 
+        artist: "El Alfa x Yandel x Myke Towers", 
+        img: "music-40", 
+        src: "music-51", 
+    }, 
+               
+    { 
+        name: "Manejando Bien Rápido", 
+        artist: "Millonario", 
+        img: "music-32", 
+        src: "music-52", 
+    }, 
 ];

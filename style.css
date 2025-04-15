@@ -14,7 +14,7 @@
 
 :root { 
     --dark: #000000;
-    --aqua: #000000;
+    --dark2: #000000;
     --yellowlight: #d3e62c; 
     --light: #ffffffce; 
     --white: #ffffff; 
@@ -28,8 +28,8 @@ body {
     justify-content: center;
     background-image: url('img/fondo1.jpg');
     min-height: 100vh;
-    background-size: cover; /* Hace que la imagen cubra toda el área del body */
-    background-position: center; /* Centra la imagen */
+    background-size: cover;
+    background-position: center;
     height: 100vh;
 }
 
@@ -228,7 +228,7 @@ body {
     width: 0%; 
     position: relative; 
     border-radius: inherit; 
-    background: linear-gradient(90deg, var(--yellowlight) 0%, var(--aqua) 100%);
+    background: linear-gradient(90deg, var(--yellowlight) 0%, var(--dark2) 100%);
     overflow: visible;
 }
 
@@ -242,7 +242,8 @@ body {
     right: -10px;   
     cursor: pointer; 
     transform: translateY(-50%);
-    background: var(--aqua); 
+    background: radial-gradient(circle,rgba(214 , 206, 51 ,1) 0%,
+    rgba(0, 0, 0 ,1) 100% ); 
     z-index: 2; 
 }
 
@@ -302,7 +303,7 @@ body {
     height: 43px; 
     width: 43px; 
     border-radius: inherit; 
-    background: linear-gradient(var(--aqua) 0%, var(--dark) 100%); 
+    background: linear-gradient(var(--dark2) 0%, var(--dark) 100%); 
 }
 
 .play-pause i { 
@@ -474,3 +475,97 @@ ul li.playing {
     text-decoration: none;
     color: var(--dark);
 }
+
+/* Estilos de botón para siguiente reproductor */
+
+.buttonmusic {
+    position: relative;
+    top: 90px;
+}
+
+.buttonReproductor {
+    font-family: "Yatra One", serif;
+    color: var(--light);
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 16px 36px;
+    border: 4px solid;
+    border-color: transparent;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.301);
+    border-radius: 100px;
+    font-weight: 500;
+    box-shadow: 0 0 0 2px #ffffff;
+    cursor: pointer;
+    overflow: hidden;
+    margin-left: 20px;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.buttonReproductor .iconoflecha {
+    position: absolute;
+    font-size: 24px;
+    color: white;
+    z-index: 9;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.buttonReproductor .svg1 {
+    right: 16px;
+}
+
+.buttonReproductor .svg2 {
+    left: -25%;
+}
+
+.buttonReproductor .colorYellow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #d3e62c;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.buttonReproductor .text {
+    position: relative;
+    z-index: 1;
+    transform: translateX(-12px);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.buttonReproductor:hover {
+    text-decoration: none;
+    box-shadow: 0 0 0 12px transparent;
+    color: black;
+    border-radius: 12px;
+}
+
+.buttonReproductor:hover .svg1 {
+    right: -25%;
+}
+
+.buttonReproductor:hover .svg2 {
+    left: 16px;
+}
+
+.buttonReproductor:hover .text {
+    transform: translateX(12px);
+}
+
+.buttonReproductor:hover .iconoflecha {
+    color: black;
+}
+
+.buttonReproductor:hover .colorYellow {
+    width: 220px;
+    height: 220px;
+    opacity: 1;
+}
+  
