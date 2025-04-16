@@ -547,7 +547,12 @@ moreMusicBtn.addEventListener("click", () => {
 });
 
 backToAlphabetBtn.addEventListener("click", () => {
+    changeGif();
     showAlphabetList();
+    musicListDiv.classList.add("show");
+    backToAlphabetBtn.classList.add("hidden");
+    danceGifContainer.style.display = "block";
+    ulTag.innerHTML = "";
 });
 
 closeMoreMusic.addEventListener("click", () => {
