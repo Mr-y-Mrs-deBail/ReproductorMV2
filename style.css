@@ -344,7 +344,7 @@ body {
 
 .music-list { 
     position: absolute; 
-    background: rgba(255, 255, 255, 0.411); 
+    background: rgba(255, 255, 255, 0.5); 
     width: 100%; 
     left: 0; 
     bottom: -55%; 
@@ -385,23 +385,23 @@ body {
     color: var(--white);
     font-weight: 700;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     text-align: center;
-    line-height: 30px;
+    line-height: 25px;
 }
 
 #back-to-alphabet {
     background-color: var(--darkwhite);
-    font-size: 25px;
+    font-size: 22px;
     color: var(--white);
     font-weight: bold;
     margin-left: -23px;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     text-align: center;
-    line-height: 30px;
+    line-height: 25px;
 }
 
 .hidden {
