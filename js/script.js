@@ -525,6 +525,10 @@ function throttle(func, limit) {
 const gifNames = ["1", "2", "3"];
 const alphabet = ["#", ... "BCDEFGHLMNPQRSTUVY".split("")];
 const backToAlphabetBtn = document.getElementById('back-to-alphabet');
+const alphabetListDiv = document.querySelector(".alphabet-list");
+const musicListDiv = document.querySelector(".music-list");
+const musicPlayerContainer = document.querySelector(".music-player-container");
+const danceGifContainer = document.querySelector(".gif-container");
 
 function changeGif() {
     const randomIndex = Math.floor(Math.random() * gifNames.length);
@@ -535,9 +539,11 @@ function changeGif() {
 
 moreMusicBtn.addEventListener("click", () => {
     changeGif();
-    document.querySelector(".alphabet-list").style.display = "block";
-    musicList.classList.add("show");
-    backToAlphabetBtn.classList.remove("hidden");
+    showAlphabetList();
+    musicListDiv.classList.add("show");
+    backToAlphabetBtn.classList.add("hidden");
+    danceGifContainer.style.display = "block";
+    ulTag.innerHTML = "";
 });
 
 backToAlphabetBtn.addEventListener("click", () => {
@@ -549,7 +555,8 @@ closeMoreMusic.addEventListener("click", () => {
 });
 
 function closeMusicList() {
-    musicList.classList.remove("show");
+    musicListDiv.classList.remove("show");
+    alphabetListDiv.style.display = "none";
     backToAlphabetBtn.classList.add("hidden");
 }
 
@@ -581,7 +588,7 @@ function loadSongsByLetter(letter) {
         ulTag.innerHTML = "<li>Ups hubo un error amor</li>";
     }
 
-    updatePlayingSong();
+    musicListDiv.classList.add("show");
     backToAlphabetBtn.classList.remove("hidden");
 }
 
@@ -589,9 +596,10 @@ function loadSongsByLetter(letter) {
 
 function showAlphabetList() {
     ulTag.innerHTML = "";
-    document.querySelector(".alphabet-list").style.display = "block";
-    musicList.classList.add("show");
+    alphabetListDiv.style.display = "block";
+    musicListDiv.classList.remove("show");
     loadAlphabet();
+    backToAlphabetBtn.classList.add("hidden");
 }
 
 // Abecedario y conteo de canciones ______________________________________________________
@@ -624,34 +632,41 @@ function selectSong(element) {
     console.log("Índice de la canción:", songIndex);
 
     if (songIndex !== -1) {
-        musicIndex = songIndex;
-        loadMusic(musicIndex);
-        playMusic();
+        musicIndex = songIndex; 
+        loadMusic(musicIndex); 
+        playMusic();      
         updatePlayingSong();
-        backToAlphabetBtn.classList.remove("hidden");
+
+        musicListDiv.classList.remove("show");
+        alphabetListDiv.style.display = "none";
+        backToAlphabetBtn.classList.add("hidden");
+        danceGifContainer.style.display = "block";
     }
 }
 
 function updatePlayingSong() {
-    const allLiTags = ulTag.querySelectorAll("li");
+    if (musicIndex !== null) { 
+        const allLiTags = ulTag.querySelectorAll("li");
 
-    allLiTags.forEach((li) => {
-        li.classList.remove("playing");
-    });
+        allLiTags.forEach((li) => {
+            li.classList.remove("playing");
+        });
 
-    const currentLi = ulTag.querySelector(`li[li-index="${musicIndex + 1}"]`);
-    if (currentLi) {
-        currentLi.classList.add("playing");
-    } else {
-        console.log("Elemento no encontrado: ", `li[li-index="${musicIndex + 1}"]`);
+        const currentLi = ulTag.querySelector(`li[li-index="${musicIndex + 1}"]`);
+        if (currentLi) {
+            currentLi.classList.add("playing");
+        } else {
+            console.log("Elemento no encontrado: ", `li[li-index="${musicIndex + 1}"]`);
+        }
     }
 }
 
-// Cargar el abecedario ______________________________________________________
+// Cargar el abecedario al cargar la página ______________________________________________________
 
 window.addEventListener('load', () => {
-    document.querySelector(".alphabet-list").style.display = "none";
-    musicList.classList.remove("show");
+    alphabetListDiv.style.display = "block";
+    musicListDiv.classList.remove("show");
     loadAlphabet();
     backToAlphabetBtn.classList.add("hidden");
+    danceGifContainer.style.display = "block";
 });

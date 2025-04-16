@@ -380,20 +380,28 @@ body {
 } 
 
 .header #close { 
+    background: var(--yellowlight);
     font-size: 22px; 
     color: var(--white);
-    font-weight: 700; 
+    font-weight: 700;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
 }
 
-#back-to-alphabet { 
-    opacity: 1;
-} 
-
 #back-to-alphabet {
-    font-size: 20px;
+    background-color: var(--darkwhite);
+    font-size: 25px;
     color: var(--white);
     font-weight: bold;
-    margin-left: -20px;
+    margin-left: -23px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
 }
 
 .hidden {
