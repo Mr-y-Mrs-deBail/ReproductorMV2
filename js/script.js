@@ -520,7 +520,7 @@ function throttle(func, limit) {
     }
 }
 
-// Lista de canciones ______________________________________________________
+// Lista de canciones ____________________________________________________________________________________________________________
 
 const gifNames = ["1", "2", "3"];
 const alphabet = ["#", ... "BCDEFGHLMNPQRSTUVY".split("")];
@@ -537,7 +537,7 @@ moreMusicBtn.addEventListener("click", () => {
     changeGif();
     document.querySelector(".alphabet-list").style.display = "block";
     musicList.classList.add("show");
-    backToAlphabetBtn.classList.add("hidden"); 
+    backToAlphabetBtn.classList.remove("hidden");
 });
 
 backToAlphabetBtn.addEventListener("click", () => {
@@ -550,7 +550,7 @@ closeMoreMusic.addEventListener("click", () => {
 
 function closeMusicList() {
     musicList.classList.remove("show");
-    backToAlphabetBtn.classList.add("hidden"); 
+    backToAlphabetBtn.classList.add("hidden");
 }
 
 function loadSongsByLetter(letter) {
@@ -582,17 +582,16 @@ function loadSongsByLetter(letter) {
     }
 
     updatePlayingSong();
-    backToAlphabetBtn.classList.remove("hidden"); 
+    backToAlphabetBtn.classList.remove("hidden");
 }
 
 // Función para mostrar la lista del abecedario ______________________________________________________
 
 function showAlphabetList() {
     ulTag.innerHTML = "";
-    document.querySelector(".alphabet-list").style.display = "block"; // lista del abecedario
+    document.querySelector(".alphabet-list").style.display = "block";
     musicList.classList.add("show");
     loadAlphabet();
-    backToAlphabetBtn.classList.add("hidden"); 
 }
 
 // Abecedario y conteo de canciones ______________________________________________________
@@ -614,7 +613,16 @@ function loadAlphabet() {
 }
 
 function selectSong(element) {
-    const songIndex = allMusic.findIndex(song => song.name === element.querySelector('span').innerText);
+    const songNameFromDOM = element.querySelector('span').innerText.trim().toLowerCase();
+    console.log("Nombre del elemento li (normalizado):", songNameFromDOM);
+
+    const songIndex = allMusic.findIndex(song => {
+        const songNameFromArray = song.name.trim().toLowerCase();
+        return songNameFromArray === songNameFromDOM;
+    });
+
+    console.log("Índice de la canción:", songIndex);
+
     if (songIndex !== -1) {
         musicIndex = songIndex;
         loadMusic(musicIndex);
@@ -627,12 +635,10 @@ function selectSong(element) {
 function updatePlayingSong() {
     const allLiTags = ulTag.querySelectorAll("li");
 
-    // Limpiar la clase 'playing'
     allLiTags.forEach((li) => {
         li.classList.remove("playing");
     });
 
-    // Resaltar la canción actualmente en reproducción
     const currentLi = ulTag.querySelector(`li[li-index="${musicIndex + 1}"]`);
     if (currentLi) {
         currentLi.classList.add("playing");
@@ -645,7 +651,7 @@ function updatePlayingSong() {
 
 window.addEventListener('load', () => {
     document.querySelector(".alphabet-list").style.display = "none";
-    musicList.classList.remove("show"); 
-    loadAlphabet(); 
+    musicList.classList.remove("show");
+    loadAlphabet();
     backToAlphabetBtn.classList.add("hidden");
 });
